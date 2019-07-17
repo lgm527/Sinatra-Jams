@@ -1,3 +1,8 @@
 <h1>Here is the page for: <%= @artist.name %></h1>
 <h2>Age: <%= @artist.age %></h2>
 <p>Bio:<br> <%= @artist.bio %></p>
+
+<form action="/artists/<%= @artist.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="DELETE THIS ARTIST">
+</form>

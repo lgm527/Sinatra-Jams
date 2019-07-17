@@ -3,8 +3,9 @@
 
 <h4>
   <% @artists.each do |artist| %>
-<%# <a href="/artists/<"></href> %>
-  <%= artist.name %>
+  <a href="/artists/<%= artist.id %>">
+    <%= artist.name %>
+  </a>
   <br>
   <% end %>
 </h4>

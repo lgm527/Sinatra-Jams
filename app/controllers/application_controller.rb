@@ -36,8 +36,24 @@ class ApplicationController < Sinatra::Base
   end
 
   #edit
+  get '/artists/:id/edit' do
+    find_artist
+    erb :edit
+  end
+
   #update
+  put "/artists/:id" do
+    find_artist
+    @artist.update(params[:artist])
+    redirect to "/artists/#{@artist.id}"
+  end
+
   #destroy
+  delete "/artists/:id" do
+    find_artist
+    @artist.destroy
+    redirect to "/artists"
+  end
 
   def find_artist
     @artist = Artist.find(params[:id])
